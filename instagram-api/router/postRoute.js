@@ -1,0 +1,10 @@
+const route = require('express').Router();
+const postController = require('../app/controllers/postController');
+route.post('/create/:id', postController.createPost);
+route.get('/get-post/:id', postController.getPost);
+route.get('/get-post-home/:id', postController.getPostHome);
+route.get('/:id', postController.getPostById);
+route.post('/like/:id', postController.like);
+route.post('/dislike/:id', postController.dislike);
+route.post('/comment', postController.comment);
+module.exports = route;
